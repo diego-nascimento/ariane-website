@@ -54,14 +54,19 @@ export const Questions = () => {
         xs: 2,
         lg: 10,
       }}
+      justifyContent={'center'}
     >
       <Grid2
         size={{
           xs: 12,
-          lg: 5,
         }}
       >
-        <Stack marginBottom={2}>
+        <Stack
+          marginBottom={2}
+          alignItems={'center'}
+          justifyContent={'center'}
+          height={'100%'}
+        >
           <Typography
             fontSize={{
               xs: 20,

@@ -20,9 +20,10 @@ export default function Page() {
       <Pilars />
       <Advantages />
       <Testemonial />
-      <Questions />
+
       <Message />
       <Presentation />
+      <Questions />
       <Footer />
     </Box>
   );

@@ -34,7 +34,7 @@ export const Presentation = () => {
               <Stack
                 maxWidth={500}
                 sx={{
-                  backgroundImage: 'url(oria.jpg)',
+                  // backgroundImage: 'url(oria.jpg)',
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
@@ -50,7 +50,18 @@ export const Presentation = () => {
                     height: 500,
                   },
                 }}
-              />
+                height={'100%'}
+                justifyContent={'center'}
+              >
+                <iframe
+                  style={{
+                    aspectRatio: '16/9',
+                  }}
+                  src="https://www.youtube.com/embed/DnltvwWUlHk?si=SdhcTIvqWbJdoNwV"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media;  "
+                />
+              </Stack>
             </Stack>
           </Grid>
           <Grid

@@ -1,24 +1,15 @@
 'use client';
-import { Avatar, Box, Grid2, Stack, Typography, useTheme } from '@mui/material';
-
-const steps = [
-  {
-    title: 'Avaliação e Diagnostico',
-    text: 'Identificação de questões que você vem enfrentando. Vamos juntas compreender de forma mais ampla o que você vem vivenciando.',
-  },
-  {
-    title: 'Plano de tratamento',
-    text: 'Com diagnóstico definido é criado um protocolo individual e personalizado (plano de tratamento) para tratar de forma personalizada o que te incomoda.',
-  },
-  {
-    title: 'Técnicas praticas',
-    text: 'Durante as sessões, além do acolhimento e uma escuta qualificada trabalhamos com técnicas eficazes da TCC (Terapias Cognitivo Comportamentais).',
-  },
-  {
-    title: 'Alta do paciente',
-    text: 'Ao atingirmos os objetivos terapêuticos que te trouxeram para o tratamento e mediante a melhora do seu quadro, você já será capaz de utilizar as habilidades e ferramentas construídas em terapia.',
-  },
-];
+import { MaxWidth } from '@/components/MaxWidth';
+import {
+  Avatar,
+  Box,
+  Button,
+  Grid2,
+  Stack,
+  Typography,
+  useTheme,
+} from '@mui/material';
+import Image from 'next/image';
 
 export const Pilars = () => {
   const theme = useTheme();
@@ -52,117 +43,241 @@ export const Pilars = () => {
           }}
         />
       </Stack>
-      <Stack
-        justifyContent={'flex-end'}
-        paddingBottom={4}
-        marginTop={4}
-        minHeight={'90vh'}
-        borderRadius={20}
-        sx={{
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundImage:
-            'url(https://plus.unsplash.com/premium_photo-1664053011444-0f4f789a8671?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
-        }}
-      >
-        <Grid2
-          paddingX={{
-            xs: 2,
-            md: 5,
-          }}
-          container
-          spacing={4}
-          marginTop={{
-            xs: 4,
-            md: 8,
-          }}
-        >
-          {steps.map((step, index) => {
-            return (
+
+      <Stack py={4} px={2} id="psicoterapia">
+        <Stack>
+          <MaxWidth>
+            <Grid2 container spacing={4}>
               <Grid2
-                key={step.title}
-                bgcolor={theme.palette.secondary.contrastText}
-                padding={{
-                  xs: 2,
-                  md: 4,
-                }}
-                borderRadius={8}
                 size={{
                   xs: 12,
-                  sm: 6,
-                  lg: 3,
-                }}
-                sx={{
-                  '&:hover': {
-                    transition: 'background .5s',
-                    background: theme.palette.terciary.main,
-                  },
+                  lg: 6,
                 }}
               >
-                <Stack direction={'column'} gap={2}>
-                  <Avatar
-                    sx={{
-                      width: 28,
-                      height: 28,
-                      background: 'transparent',
-                      color: theme.palette.secondary.main,
-                      border: 1,
-                      fontSize: 14,
-                    }}
+                <Stack
+                  alignItems={'center'}
+                  height={'100%'}
+                  justifyContent={'center'}
+                >
+                  <Stack
+                    width={'100%'}
+                    maxWidth={750}
+                    justifyContent={'center'}
                   >
-                    {index + 1}
-                  </Avatar>
-
-                  <Typography
-                    fontSize={{
-                      xs: 24,
-                      md: 28,
-                    }}
-                    fontFamily={'Noto Serif Georgian Variable, serif'}
-                  >
-                    {step.title}
-                  </Typography>
-                  <Typography fontSize={16} fontWeight={400}>
-                    {step.text}
-                  </Typography>
+                    <Image
+                      src={'/image.png'}
+                      width={1500}
+                      height={1200}
+                      alt="imagem"
+                    />
+                  </Stack>
                 </Stack>
               </Grid2>
-            );
-          })}
-        </Grid2>
-      </Stack>
-      {/* <Stack marginTop={4} alignItems={'center'}>
-        <Typography
-          fontSize={{
-            xs: 20,
-            md: 28,
-          }}
-          fontWeight={500}
-          color="secondary"
-          textAlign={'center'}
-        >
-          Retome as rédeas da sua vida.
-        </Typography>
+              <Grid2
+                size={{
+                  xs: 12,
+                  lg: 6,
+                }}
+              >
+                <Stack alignItems={'center'}>
+                  <Stack
+                    width={'100%'}
+                    maxWidth={750}
+                    justifyContent={'center'}
+                  >
+                    <Stack gap={4} marginTop={4}>
+                      <Stack
+                        direction={{
+                          xs: 'column',
+                          md: 'row',
+                        }}
+                        alignItems={{
+                          xs: 'center',
+                          md: 'initial',
+                        }}
+                        gap={2}
+                      >
+                        <Box marginTop={1}>
+                          <Avatar
+                            sx={{
+                              backgroundColor: theme.palette.secondary.main,
+                            }}
+                          >
+                            1
+                          </Avatar>
+                        </Box>
 
-        <Typography
-          fontSize={{
-            xs: 16,
-            md: 24,
-          }}
-          fontWeight={500}
-          color="primary.contrastText"
-          textAlign={'center'}
-        >
-          A TCC é uma abordagem cientifica com resultados mensuráveis e
-          comprovados{' '}
-        </Typography>
-        <Box marginTop={2}>
-          <Button variant="contained" size="large" color="secondary">
-            Agende sua consulta
-          </Button>
-        </Box>
-      </Stack> */}
+                        <Typography
+                          fontSize={{
+                            md: 18,
+                            xs: 12,
+                          }}
+                        >
+                          <Box component="strong" color={'#000'}>
+                            Identificação
+                          </Box>{' '}
+                          de questões que você vem ​enfrentando. Vamos juntas
+                          compreender de ​forma mais ampla o que você vem
+                          vivenciando.
+                        </Typography>
+                      </Stack>
+                      <Stack
+                        direction={{
+                          xs: 'column',
+                          md: 'row',
+                        }}
+                        alignItems={{
+                          xs: 'center',
+                          md: 'initial',
+                        }}
+                        gap={2}
+                      >
+                        <Box marginTop={1}>
+                          <Avatar
+                            sx={{
+                              backgroundColor: theme.palette.secondary.main,
+                            }}
+                          >
+                            2
+                          </Avatar>
+                        </Box>
+
+                        <Typography
+                          fontSize={{
+                            md: 18,
+                            xs: 12,
+                          }}
+                        >
+                          Com diagnóstico definido é criado um protocolo
+                          ​individual e personalizado ({' '}
+                          <Box component="strong" color={'#000'}>
+                            plano de tratamento
+                          </Box>{' '}
+                          ) para tratar de forma​{' '}
+                          <Box component="strong" color={'#000'}>
+                            personalizada
+                          </Box>{' '}
+                          o que te incomoda.
+                        </Typography>
+                      </Stack>
+                      <Stack
+                        direction={{
+                          xs: 'column',
+                          md: 'row',
+                        }}
+                        alignItems={{
+                          xs: 'center',
+                          md: 'initial',
+                        }}
+                        gap={2}
+                      >
+                        <Box marginTop={1}>
+                          <Avatar
+                            sx={{
+                              backgroundColor: theme.palette.secondary.main,
+                            }}
+                          >
+                            3
+                          </Avatar>
+                        </Box>
+
+                        <Typography
+                          fontSize={{
+                            md: 18,
+                            xs: 12,
+                          }}
+                        >
+                          Durante as sessões, além do{' '}
+                          <Box component="strong" color={'#000'}>
+                            acolhimento
+                          </Box>{' '}
+                          e uma​{' '}
+                          <Box component="strong" color={'#000'}>
+                            escuta qualificada
+                          </Box>{' '}
+                          trabalhamos com técnicas ​eficazes da TCC (Terapias
+                          Cognitivo ​Comportamentais).
+                        </Typography>
+                      </Stack>
+                      <Stack
+                        direction={{
+                          xs: 'column',
+                          md: 'row',
+                        }}
+                        alignItems={{
+                          xs: 'center',
+                          md: 'initial',
+                        }}
+                        gap={2}
+                      >
+                        <Box marginTop={1}>
+                          <Avatar
+                            sx={{
+                              backgroundColor: theme.palette.secondary.main,
+                            }}
+                          >
+                            4
+                          </Avatar>
+                        </Box>
+
+                        <Typography
+                          fontSize={{
+                            md: 18,
+                            xs: 12,
+                          }}
+                        >
+                          Ao atingirmos os{' '}
+                          <Box component="strong" color={'#000'}>
+                            objetivos terapêuticos
+                          </Box>{' '}
+                          que te ​trouxeram para o tratamento e mediante a
+                          ​melhora do seu quadro, você já será capaz de
+                          ​utilizar as{' '}
+                          <Box component="strong" color={'#000'}>
+                            habilidades
+                          </Box>{' '}
+                          e{' '}
+                          <Box component="strong" color={'#000'}>
+                            ferramentas
+                          </Box>{' '}
+                          construídas ​em terapia.
+                        </Typography>
+                      </Stack>
+                    </Stack>
+                  </Stack>
+                </Stack>
+              </Grid2>
+            </Grid2>
+            <Stack>
+              <Typography
+                fontSize={{
+                  md: 24,
+                  xs: 18,
+                }}
+                fontWeight={700}
+                marginTop={{
+                  xs: 4,
+                  lg: 8,
+                }}
+                textAlign={'center'}
+              >
+                Você pode <strong>retomar as rédeas</strong> da sua{' '}
+                <strong>retomar as rédeas</strong>. E eu ​posso te auxiliar com
+                isso através de uma​{' '}
+                <strong>abordagem validada cientificamente</strong>.
+              </Typography>
+            </Stack>
+
+            <Stack alignItems={'center'} marginTop={4}>
+              <Box>
+                <Button variant="contained" color="secondary" size="large">
+                  Fale comigo
+                </Button>
+              </Box>
+            </Stack>
+          </MaxWidth>
+        </Stack>
+      </Stack>
     </Stack>
   );
 };
